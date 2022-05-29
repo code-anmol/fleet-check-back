@@ -1,0 +1,19 @@
+May 25:
+
+recap:  Created a controller for @GetMapping("/v1/home")
+        controller is able to fetch and return the VehicleTypeDTO.
+
+Today:  started working on InspectionFormSaver
+        it will handle the request @GetMapping("/v1/getform/")
+        successfully implemented get form
+        state is changing based on events
+        successfully implemented post method using axios which send InspectionReportDto
+
+Tomorrow:
+            Will find out a way to receive JSON object from the post request and parse if needed
+
+May 29:
+
+      today:
+             successfully saved inspection report.
+             created a git repo
