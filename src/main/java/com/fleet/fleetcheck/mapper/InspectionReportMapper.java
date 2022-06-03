@@ -12,9 +12,8 @@ public interface InspectionReportMapper {
 
     InspectionReportMapper INSTANCE = Mappers.getMapper(InspectionReportMapper.class);
 
-    @Mapping(source = "operatorTagNumber" , target = "operator.tagNumber")
-    @Mapping(source = "vehicleNumber" , target = "vehicle.unitNumber")
-    @Mapping(source = "isPreOrPost" , target = "isPreOrPost")
+
+    @Mapping(source = "comment", target = "comment")
     @Mapping(source = "inspectionResults", target = "inspectionResults")
     public InspectionReport getEntity(InspectionReportDto inspectionReportDto);
 }

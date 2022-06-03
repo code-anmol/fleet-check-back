@@ -1,9 +1,7 @@
 package com.fleet.fleetcheck.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Operator {
@@ -16,12 +14,29 @@ public class Operator {
 
     private String tagNumber;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<InspectionReport> inspectionReports;
+
+    public Operator(String name, String tagNumber, List<InspectionReport> inspectionReports) {
+        this.name = name;
+        this.tagNumber = tagNumber;
+        this.inspectionReports = inspectionReports;
+    }
+
     public Operator() {
     }
 
-    public Operator(String name, String tagNumber) {
-        this.name = name;
+    public Operator(String tagNumber) {
+
         this.tagNumber = tagNumber;
+    }
+
+    public List<InspectionReport> getInspectionReports() {
+        return inspectionReports;
+    }
+
+    public void setInspectionReports(List<InspectionReport> inspectionReports) {
+        this.inspectionReports = inspectionReports;
     }
 
     public int getId() {
@@ -46,5 +61,20 @@ public class Operator {
 
     public void setTagNumber(String tagNumber) {
         this.tagNumber = tagNumber;
+    }
+
+    public InspectionReport addInspectionReport(InspectionReport inspectionReport){
+        inspectionReports.add(inspectionReport);
+        return inspectionReport;
+    }
+
+    @Override
+    public String toString() {
+        return "Operator{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tagNumber='" + tagNumber + '\'' +
+                ", inspectionReports=" + inspectionReports +
+                '}';
     }
 }

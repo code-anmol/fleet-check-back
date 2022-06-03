@@ -17,3 +17,9 @@ May 29:
       today:
              successfully saved inspection report.
              created a git repo
+
+June 2:
+        was able to successfully save inspection report and link it with operator and vehicle
+        create new vehicle and operator if does not exist
+        add inspection report to List<InspectionReport>  if operator and vehicle already exist
+        added comment text area and Operator Name text input in frontend inspectionForm.js component

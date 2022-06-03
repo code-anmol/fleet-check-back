@@ -20,6 +20,9 @@ public class InspectionResult {
         this.result = result;
     }
 
+    public InspectionResult() {
+    }
+
     public String getInspectionName() {
         return inspectionName;
     }

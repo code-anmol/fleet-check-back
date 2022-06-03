@@ -10,53 +10,31 @@ public class InspectionReport {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Operator operator;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Vehicle vehicle;
-
 
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<InspectionResult> inspectionResults;
-    private String isPreOrPost;
+    private String comment;
+
 
 
     public InspectionReport() {
     }
 
-    public InspectionReport(Operator operator, Vehicle vehicle, String isPreOrPost, List<InspectionResult> inspectionResults) {
-        this.operator = operator;
-        this.vehicle = vehicle;
-        this.isPreOrPost = isPreOrPost;
+    public InspectionReport(String comment, List<InspectionResult> inspectionResults) {
+
+        this.comment = comment;
         this.inspectionResults = inspectionResults;
     }
 
 
 
-    public Operator getOperator() {
-        return operator;
+    public String getComment() {
+        return comment;
     }
 
-    public void setOperator(Operator operator) {
-        this.operator = operator;
-    }
-
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
-
-    public String getIsPreOrPost() {
-        return isPreOrPost;
-    }
-
-    public void setIsPreOrPost(String isPreOrPost) {
-        this.isPreOrPost = isPreOrPost;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public List<InspectionResult> getInspectionResults() {
@@ -66,4 +44,16 @@ public class InspectionReport {
     public void setInspectionResults(List<InspectionResult> inspectionResults) {
         this.inspectionResults = inspectionResults;
     }
+
+    @Override
+    public String toString() {
+        return "InspectionReport{" +
+                "id=" + id +
+                ", inspectionResults=" + inspectionResults +
+                ", isPreOrPost='" + comment + '\'' +
+                "} /n";
+    }
+
+
+
 }

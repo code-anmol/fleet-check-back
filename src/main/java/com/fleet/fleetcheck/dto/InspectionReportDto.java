@@ -6,30 +6,37 @@ import java.util.List;
 
 public class InspectionReportDto {
 
-    List<InspectionResult> inspectionResults;
-    String operatorTagNumber;
-    String vehicleNumber;
+    private List<InspectionResult> inspectionResults;
+    private String operatorTagNumber;
+    private String vehicleUnitNumber;
+    private String operatorName;
+    private String comment;
 
-    String isPreOrPost;
-
-    public InspectionReportDto(List<InspectionResult> inspectionResults, String operatorTagNumber, String vehicleNumber, String isPreOrPost) {
+    public InspectionReportDto(List<InspectionResult> inspectionResults, String operatorTagNumber, String vehicleUnitNumber, String operatorName, String comment) {
         this.inspectionResults = inspectionResults;
         this.operatorTagNumber = operatorTagNumber;
-        this.vehicleNumber = vehicleNumber;
-        this.isPreOrPost = isPreOrPost;
+        this.vehicleUnitNumber = vehicleUnitNumber;
+        this.operatorName = operatorName;
+        this.comment = comment;
     }
-
-
 
     public InspectionReportDto() {
     }
 
-    public String getIsPreOrPost() {
-        return isPreOrPost;
+    public String getOperatorName() {
+        return operatorName;
     }
 
-    public void setIsPreOrPost(String isPreOrPost) {
-        this.isPreOrPost = isPreOrPost;
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public List<InspectionResult> getInspectionResults() {
@@ -48,12 +55,12 @@ public class InspectionReportDto {
         this.operatorTagNumber = operatorNumber;
     }
 
-    public String getVehicleNumber() {
-        return vehicleNumber;
+    public String getVehicleUnitNumber() {
+        return vehicleUnitNumber;
     }
 
-    public void setVehicleNumber(String vehicleNumber) {
-        this.vehicleNumber = vehicleNumber;
+    public void setVehicleUnitNumber(String vehicleUnitNumber) {
+        this.vehicleUnitNumber = vehicleUnitNumber;
     }
 
     @Override
@@ -61,7 +68,8 @@ public class InspectionReportDto {
         return "InspectionReportDto{" +
                 "inspectionDtoList=" + inspectionResults +
                 ", operatorTagNumber='" + operatorTagNumber + '\'' +
-                ", vehicleNumber='" + vehicleNumber + '\'' +
+                ", vehicleNumber='" + vehicleUnitNumber + '\'' +
                 '}';
     }
+
 }
