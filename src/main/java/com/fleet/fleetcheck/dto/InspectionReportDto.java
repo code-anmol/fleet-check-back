@@ -2,6 +2,7 @@ package com.fleet.fleetcheck.dto;
 
 import com.fleet.fleetcheck.entity.InspectionResult;
 
+import java.util.Date;
 import java.util.List;
 
 public class InspectionReportDto {
@@ -12,6 +13,8 @@ public class InspectionReportDto {
     private String operatorName;
     private String comment;
 
+    private Date date;
+
     public InspectionReportDto(List<InspectionResult> inspectionResults, String operatorTagNumber, String vehicleUnitNumber, String operatorName, String comment) {
         this.inspectionResults = inspectionResults;
         this.operatorTagNumber = operatorTagNumber;
@@ -21,6 +24,14 @@ public class InspectionReportDto {
     }
 
     public InspectionReportDto() {
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getOperatorName() {

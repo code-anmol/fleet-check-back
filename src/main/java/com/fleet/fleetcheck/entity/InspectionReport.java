@@ -1,6 +1,7 @@
 package com.fleet.fleetcheck.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -16,6 +17,8 @@ public class InspectionReport {
     private List<InspectionResult> inspectionResults;
     private String comment;
 
+    private Date date;
+
 
 
     public InspectionReport() {
@@ -28,6 +31,13 @@ public class InspectionReport {
     }
 
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public String getComment() {
         return comment;

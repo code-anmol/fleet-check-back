@@ -15,5 +15,6 @@ public interface InspectionReportMapper {
 
     @Mapping(source = "comment", target = "comment")
     @Mapping(source = "inspectionResults", target = "inspectionResults")
+    @Mapping(source = "date", target = "date")
     public InspectionReport getEntity(InspectionReportDto inspectionReportDto);
 }

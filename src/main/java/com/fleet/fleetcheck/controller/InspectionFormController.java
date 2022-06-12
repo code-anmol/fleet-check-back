@@ -1,14 +1,8 @@
 package com.fleet.fleetcheck.controller;
 
 import com.fleet.fleetcheck.dto.InspectionReportDto;
-import com.fleet.fleetcheck.entity.InspectionReport;
-import com.fleet.fleetcheck.entity.InspectionType;
 import com.fleet.fleetcheck.service.InspectionReportService;
-import com.fleet.fleetcheck.service.VehicleTypeService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Map;
 
 @RestController
 public class InspectionFormController {
@@ -29,6 +23,7 @@ public class InspectionFormController {
 
     @PostMapping("/v1/saveInspectionReport/")
     public void saveInspectionReport(@RequestBody InspectionReportDto inspectionReportDto){
+        System.out.println(inspectionReportDto);
         inspectionReportService.saveInspectionReport(inspectionReportDto);
 
     }
