@@ -23,3 +23,51 @@ June 2:
         create new vehicle and operator if does not exist
         add inspection report to List<InspectionReport>  if operator and vehicle already exist
         added comment text area and Operator Name text input in frontend inspectionForm.js component
+
+June 13:
+        setup spring security
+        created ADMIN, OPERATOR and SUPERVISOR roles
+        gave role based access to "/v1/**" api to all roles
+        setup AppUserRepository, AppUserService
+
+        tomorrow:
+                user registration.
+
+
+
+//command line runner
+
+package com.fleet.fleetcheck;
+
+import com.fleet.fleetcheck.security.UserRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyCommandLineRunner implements CommandLineRunner {
+
+    private final PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+
+    public MyCommandLineRunner(PasswordEncoder passwordEncoder,
+                               UserRepository userRepository) {
+        this.passwordEncoder = passwordEncoder;
+        this.userRepository = userRepository;
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+//        AppUser user = new AppUser("admin",
+//                "ADMIN101",
+//                "admin101",
+//                passwordEncoder.encode("admin"),
+//                AppUserRole.ADMIN,
+//                false,
+//                true);
+//
+//        appUserRepository.save(user);
+    }
+
+}
+
